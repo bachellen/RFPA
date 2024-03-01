@@ -1,0 +1,21 @@
+<form (ngSubmit)="generateRfp()" #rfpForm="ngForm">
+    <div class="form-group">
+      <label for="projectSummary">Project Summary</label>
+      <textarea class="form-control" id="projectSummary" required [(ngModel)]="projectSummary" name="projectSummary"></textarea>
+    </div>
+    <!-- Include other fields as needed -->
+    <button type="submit" class="btn btn-primary">Generate RFP</button>
+  </form>
+  
+  <!-- Display Generated RFP -->
+  <div *ngIf="generatedRfp" class="mt-4">
+    <h3>Generated RFP</h3>
+    <div><strong>Basic Information:</strong> {{generatedRfp.basicInformation}}</div>
+    <div><strong>Titles and Deadlines:</strong> {{generatedRfp.titlesAndDeadlines}}</div>
+    <div><strong>Domain of the Project:</strong> {{generatedRfp.projectDomain}}</div>
+    <div><strong>Place of Execution:</strong> {{generatedRfp.placeOfExecution}}</div>
+    <div><strong>Table of Quantities:</strong> {{generatedRfp.tableOfQuantities}}</div>
+    <div><strong>RFP Files and Documentation:</strong> {{generatedRfp.rfpDocumentation}}</div>
+    <div><strong>Evaluation Criteria:</strong> {{generatedRfp.evaluationCriteria}}</div>
+  </div>
+  
